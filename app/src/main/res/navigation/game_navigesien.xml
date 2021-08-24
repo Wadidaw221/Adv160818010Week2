@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_navigesien"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.ubaya.advnativeweek2.MainFragment"
+        android:label="Game Screen"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_hasil"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.ubaya.advnativeweek2.ResultFragment"
+        android:label="Game Over Screen"
+        tools:layout="@layout/fragment_result">
+        <action
+            android:id="@+id/action_Home"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="playerScore"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
